@@ -32,4 +32,10 @@ class School
     end
     return capitalized_names
   end
+
+  def converts_end_time_to_clock_time
+    if end_time.to_i > 12
+    "#{end_time.to_i - 12}:00"
+    end
+  end
 end

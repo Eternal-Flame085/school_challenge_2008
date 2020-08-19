@@ -47,6 +47,8 @@ class SchoolTest < Minitest::Test
     assert_equal '12:00', school2.end_time
   end
 
+  #Iteration 3 tests
+
   def test_returns_bool_if_school_is_longer_than_4_hours
     school = School.new('9:00', 7)
     school2 = School.new('9:00', 3)
@@ -65,5 +67,13 @@ class SchoolTest < Minitest::Test
     expected_names = ["Aurora","Tim","Megan"]
 
     assert_equal expected_names, school.starndard_student_names
+  end
+
+  #Iteration 4 tests
+
+  def test_converts_end_time_to_clock_time
+    school = School.new('9:00', 7)
+
+    assert_equal "4:00", school.converts_end_time_to_clock_time
   end
 end
