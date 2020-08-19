@@ -18,6 +18,18 @@ class School
   end
 
   def is_full_time?
-    return true if @hours_in_school_day > 4
+    if @hours_in_school_day > 4
+      true
+    else
+      false
+    end
+  end
+
+  def starndard_student_names
+    capitalized_names = []
+    @student_names.each do |name|
+      capitalized_names << name.capitalize
+    end
+    return capitalized_names
   end
 end

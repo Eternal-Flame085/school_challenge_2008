@@ -49,7 +49,21 @@ class SchoolTest < Minitest::Test
 
   def test_returns_bool_if_school_is_longer_than_4_hours
     school = School.new('9:00', 7)
+    school2 = School.new('9:00', 3)
 
     assert_equal true, school.is_full_time?
+    assert_equal false, school2.is_full_time?
+  end
+
+  def test_it_can_return_student_names_capitalized
+    school = School.new('9:00', 7)
+
+    school.add_student_name('Aurora')
+    school.add_student_name('tim')
+    school.add_student_name('megan')
+
+    expected_names = ["Aurora","Tim","Megan"]
+
+    assert_equal expected_names, school.starndard_student_names
   end
 end
